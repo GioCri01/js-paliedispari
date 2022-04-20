@@ -5,41 +5,59 @@
 
 //1.Chiedere all’utente di inserire una parola
 
-let parolaInserita= document.getElementById("imput-parola").value;
-let parolaInvertita;
-let arrParola;
+const parolaInserita= document.getElementById("input-parola").value;
+const btn = document.getElementById("submit");
+btn.addEventListener("click" , controlloParolaInserita );
 
 
-document.getElementById("submit").addEventListener("click" , controlloParolaInserita );
 
 
-function controlloParolaInserita(params) {
+
+
+function controlloParolaInserita() {
     
     
-    arrParola = parolaInserita.split("");
-    parolaInvertita = parolaInserita.split("").reverse("");
-    console.log(arrParola);
-    console.log(parolaInvertita); 
+     const arrParola = parolaInserita.split("");
+     const parolaInvertita = parolaInserita.split("").reverse("");
+     
+
+    let IsPalindromo = false;
+
+    
     
 
     for (let i = 0; i < arrParola.length; i++) {
         if(arrParola[i] === parolaInvertita[i]){
-            console.log("palindroma");
-        }else{
-            console.log("non Palindroma");
-        }
-
-        
-        
+            IsPalindromo = true;
+        }    
+            
+    }        
+    
+    if( IsPalindromo === true){
+        document.querySelector("h1").innerHTML = " la parola inserita è palindroma"
+    }else{
+        document.querySelector("h1").innerHTML = " la parola inserita non  è palindroma"
     }
-    return
+            
+    return IsPalindromo    
+        
+    
+
+    
+
+    
+
+    
+
+}    
+    
    
     
 
    
 
   
-}
+
 
 
 
