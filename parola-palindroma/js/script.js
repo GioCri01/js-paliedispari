@@ -39,7 +39,7 @@ function controlloParolaInserita() {
         document.querySelector("h1").innerHTML = " la parola inserita non  è palindroma"
     }
             
-    return IsPalindromo    
+       
         
     
 
